@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Minha página</title>
+        <meta charset="utf-8"> 
+        <script type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body onload="load()"> <!-- Quando o body for carregado a função load()
+                            será executada-->
+        <!-- Essa linha chama a função clicou definido no main.js 
+            quando o botão for clicado -->
+        <button type="button" onclick="clicou()">Clique aqui</button>
+        
+        <!-- Definido um id para ser chamado no código do JS -->
+        <p id="agradecimento" onclick="redirecionar()"></p>
+        
+        <!-- Criação de um elemento com Id "mousemove" -->
+        <p id="mousemove" onmouseover="trocar()" onmouseout="voltar()">Passe o mouse aqui 1 </p>
+        <!-- Criação de um elemento com Id "mousemove2" -->
+        <!-- Neste caso como a função trocar() se refere ao ID "mousemove"
+        teria que se criar uma função específica para Id "mousemove2".-->
+        <p id="mousemove2" onmouseover="trocar()" onmouseout="voltar()">Passe o mouse aqui 2</p>
+
+        <!-- Solução é usar um função genérica -->
+        <p id="mousemove3" onmouseover="trocar_generico(this)" onmouseout="voltar_generico(this)">Passe o mouse aqui 3</p>
+        <!-- Neste caso a criação de um id não é mais necessária -->
+        <p onmouseover="trocar_generico(this)" onmouseout="voltar_generico(this)">Passe o mouse aqui 4</p>
+        <p onmouseover="trocar_generico(this)" onmouseout="voltar_generico(this)">Passe o mouse aqui 5</p>
+        
+        <!-- Cada vez que mudar o valor no seletor, a função funcaoChange()
+        será executada -->
+        <select onchange="funcaoChange(this)">
+            <option value="1">Valor 1</option>
+            <option value="2">Valor 2</option>
+            <option value="3">Valor 3</option>
+        </select>
+    </body>
+</html>
